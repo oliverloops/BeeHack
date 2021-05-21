@@ -1,10 +1,12 @@
 import React from "react";
+import { GeistProvider, CssBaseline } from '@geist-ui/react'
 
 function App() {
   return (
-    <div>
-      <h1>Hola :3</h1>
-    </div>
+    <GeistProvider>
+      <CssBaseline />
+      <h1>Hola</h1>
+    </GeistProvider>
   );
 }
 
