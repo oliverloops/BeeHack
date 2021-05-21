@@ -1,11 +1,14 @@
 import React from "react";
-import { GeistProvider, CssBaseline } from '@geist-ui/react'
+import { GeistProvider, CssBaseline } from "@geist-ui/react";
+
+// Routes
+import AllRoutes from "./routes";
 
 function App() {
   return (
     <GeistProvider>
       <CssBaseline />
-      <h1>Hola</h1>
+      <AllRoutes />
     </GeistProvider>
   );
 }
