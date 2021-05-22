@@ -22,7 +22,7 @@ const Card = () => {
   const { palette } = useTheme();
 
   return (
-    <Link to="/">
+    <Link to="/group/1">
       <Container style={{ backgroundColor: palette.accents_2 }}>
         <CardContent />
       </Container>
