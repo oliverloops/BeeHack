@@ -24,8 +24,8 @@ const Home = () => {
 
   return (
     <>
-      <Row>
-        <Col span={18}>
+      <Row style={{ padding: "1em" }}>
+        <Col span={19}>
           <Title>Explora</Title>
         </Col>
 
@@ -35,13 +35,12 @@ const Home = () => {
           </Col>
         </Row>
       </Row>
-      <Row justify="center">
-        <SearchFilter />
-      </Row>
 
-      <Button onClick={() => activeButton()} auto type="success" ghost>
+      <SearchFilter />
+
+      {/* <Button onClick={() => activeButton()} auto type="success" ghost>
         Click me!
-      </Button>
+      </Button> */}
     </>
   );
 };
