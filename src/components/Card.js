@@ -8,6 +8,8 @@ const Container = styled.div`
   height: 140px;
   border-radius: 12px;
   border: 3px rgb(218, 221, 225) solid;
+  color: #000;
+  cursor: pointer;
 `;
 
 const GroupImg = styled.img`
