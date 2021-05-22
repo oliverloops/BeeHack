@@ -1,4 +1,4 @@
-import { Row, Col, Button } from "@geist-ui/react";
+import { Row, Col, Text } from "@geist-ui/react";
 import styled from "styled-components";
 import me from "../static/me.jpg";
 
@@ -7,7 +7,7 @@ import SearchFilter from "../components/SearchFilter";
 
 // Styled Components
 const Title = styled.h3`
-  padding: 18px 18px 18px 20px;
+  padding: 18px 18px 18px 14px;
   font-size: 1.75rem;
 `;
 
@@ -38,9 +38,11 @@ const Home = () => {
 
       <SearchFilter />
 
-      {/* <Button onClick={() => activeButton()} auto type="success" ghost>
-        Click me!
-      </Button> */}
+      <Row justify="center">
+        <Text p b size={"1.15em"}>
+          Principales
+        </Text>
+      </Row>
     </>
   );
 };
