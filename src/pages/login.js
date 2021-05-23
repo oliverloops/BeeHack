@@ -74,9 +74,9 @@ const Login = () => {
     const { email, password } = values;
 
     //  Hcerla Async Await
-    async function login() {
+    function login() {
         try {
-             await fetch ( 'https://ug-groups.herokuapp.com/log-in' , {
+            fetch ( 'https://ug-groups.herokuapp.com/log-in' , {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: { "Content-type" : "application/json; charset=UTF-8" }
