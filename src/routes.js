@@ -6,6 +6,7 @@ import Login from "../src/pages/login";
 import Home from "../src/pages/home";
 import GroupView from "../src/pages/group_view";
 import Profile from "../src/pages/profile";
+import ProfileList from "../src/pages/profileList";
 
 //Context API
 import { AppContext } from "./App";
@@ -28,12 +29,9 @@ const AllRoutes = () => {
         <Route path="/profile">
           <Profile />
         </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
+        <Route path="/:id/profiles" children={<ProfileList />} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/" component={Login} />
       </Switch>
     </Router>
   );

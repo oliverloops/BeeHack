@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Row, Text, Button, Spacer } from "@geist-ui/react";
-// import styled from "styled-components";
 
 // Layout components
 import Header from "../layout/Header";
+import NavBar from "../layout/NavBar";
 
 const Profile = () => {
   const [user, setUser] = React.useState({});
@@ -69,6 +69,7 @@ const Profile = () => {
           </Button>
         </Link>
       </Row>
+      <NavBar />
     </>
   );
 };

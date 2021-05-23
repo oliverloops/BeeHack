@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Row,
   Col,
@@ -15,6 +15,8 @@ import { ImNewspaper } from "react-icons/im";
 import { BsPeopleFill } from "react-icons/bs";
 import { MdQuestionAnswer } from "react-icons/md";
 import { IoIosRocket } from "react-icons/io";
+
+import NavBar from "../layout/NavBar";
 
 // Layout components
 import Header from "../layout/Header";
@@ -60,7 +62,7 @@ const GroupContent = ({ data }) => {
             </IconBox>
           </Col>
           <Col span={12}>
-            <Link to="/">
+            <Link to="/1/profiles">
               <IconBox style={{ backgroundColor: palette.accents_2 }}>
                 <Row justify="center">
                   <BsPeopleFill size={32} />
@@ -96,6 +98,7 @@ const GroupContent = ({ data }) => {
         </Row>
       </Grid.Container>
       <Spacer y={1} />
+      <NavBar />
     </>
   );
 };
