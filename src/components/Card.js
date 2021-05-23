@@ -43,12 +43,14 @@ const CardContent = ({ info }) => {
           </Text>
           <Spacer x={1} />
           <Text p size={13}>
-            tags
+            {info.tags[0]}
           </Text>
         </Row>
         <Row style={{ marginTop: "-20px" }} align="top">
           <Col>
-            <p>{info.description}</p>
+            <Text p size={15}>
+              {info.description}
+            </Text>
           </Col>
         </Row>
       </Col>
