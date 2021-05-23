@@ -1,3 +1,4 @@
+import React from "react";
 import { Row, Col, Text, Grid } from "@geist-ui/react";
 
 // UI components
@@ -8,6 +9,19 @@ import Card from "../components/Card";
 import Header from "../layout/Header";
 
 const Home = () => {
+  const getData = async () => {
+    await fetch("https://ug-groups.herokuapp.com/search-groups?tag=python")
+      .catch((err) => {
+        throw new Error(`Something Failed - Reason: ${err}`);
+      })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
+  React.useState(() => {
+    getData();
+  }, []);
+
   return (
     <>
       <Header title={"Explora"} />
