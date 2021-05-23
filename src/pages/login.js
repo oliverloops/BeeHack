@@ -5,7 +5,10 @@ import styled from 'styled-components';
 import Logo from '../assets/bee.png'
 //  Validations
 import useValidation from '../hooks/useValidation';
-import validateLogin from '../validation/validateLogin'; 
+import validateLogin from '../validation/validateLogin';
+
+//  Redirect
+import { useHistory } from 'react-router-dom';
 
 //  Initial state
 const INITIAL_STATE = {
@@ -60,6 +63,8 @@ const LoginFormCont = styled.div`
 
 const Login = () => {
 
+    let history = useHistory();
+
     const { palette } = useTheme();
 
     const [error, getError] = useState(false);
@@ -68,10 +73,17 @@ const Login = () => {
 
     const { email, password } = values;
 
+    //  Hcerla Async Await
     async function login() {
         try {
-            //  API POST
-            console.log(values);
+             await fetch ( 'https://ug-groups.herokuapp.com/log-in' , {
+                method: 'POST',
+                body: JSON.stringify(values),
+                headers: { "Content-type" : "application/json; charset=UTF-8" }
+            })
+            .then(response => response.json())
+            .catch(err => console.log(err));
+            history.push('/')
         } catch (error) {
             console.error('Hubo un error al iniciar sesión', error.message);
             getError(error.message)
@@ -82,7 +94,7 @@ const Login = () => {
         <LoginContainer>
             <LoginTitleCont>
                 <img src={Logo} alt ="logo" />
-                <Text h1 size={50} style={{color: palette.success}}>Iniciar Sesión</Text>
+                <Text h1 size={50} style={{color: "#333333"}}>Iniciar Sesión</Text>
             </LoginTitleCont>
             <LoginFormCont>
                 { errors.email && <Text h4 type="error" style={{textAlign: 'center'}}>{errors.email}</Text> }

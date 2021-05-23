@@ -7,8 +7,8 @@ import AllRoutes from "./routes";
 function App() {
   return (
     <GeistProvider>
-      <CssBaseline />
-      <AllRoutes />
+        <CssBaseline />
+        <AllRoutes />
     </GeistProvider>
   );
 }

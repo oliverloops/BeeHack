@@ -6,6 +6,7 @@ import Card from "../components/Card";
 
 // Layout components
 import Header from "../layout/Header";
+import NavBar from '../layout/NavBar';
 
 const Home = () => {
   return (
@@ -34,6 +35,7 @@ const Home = () => {
           </Col>
         </Row>
       </Grid.Container>
+      <NavBar />
     </>
   );
 };

@@ -15,6 +15,8 @@ import { BsPeopleFill } from "react-icons/bs";
 import { MdQuestionAnswer } from "react-icons/md";
 import { IoIosRocket } from "react-icons/io";
 
+import NavBar from '../layout/NavBar';
+
 // Layout components
 import Header from "../layout/Header";
 
@@ -95,6 +97,7 @@ const GroupContent = () => {
         </Row>
       </Grid.Container>
       <Spacer y={1} />
+      <NavBar />
     </>
   );
 };
