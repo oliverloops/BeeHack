@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Row, Col, Text, Grid } from "@geist-ui/react";
 
 // UI components
@@ -8,7 +8,11 @@ import Card from "../components/Card";
 // Layout components
 import Header from "../layout/Header";
 
+// Context API
+import { AppContext } from "../App";
+
 const Home = () => {
+  const consumer = useContext(AppContext);
   const [storedItems, setStoredItems] = React.useState([]);
   const [filteredItems, setFilteredItems] = React.useState("");
 
@@ -24,7 +28,10 @@ const Home = () => {
         throw new Error(`Something Failed - Reason: ${err}`);
       })
       .then((res) => res.json())
-      .then((data) => setStoredItems([data.groups]));
+      .then((data) => {
+        setStoredItems([data.groups]);
+        consumer.setContent(data.groups);
+      });
   };
 
   const filtered = storedItems.map((elem) => {
@@ -54,7 +61,7 @@ const Home = () => {
             {filtered.map((elem) =>
               elem.map((item) => (
                 <Grid key={item.id}>
-                  <Card info={item} />
+                  <Card info={item} id={item.id} />
                 </Grid>
               ))
             )}

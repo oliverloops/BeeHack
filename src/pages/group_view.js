@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useParams } from "react-router-dom";
 import {
   Row,
   Col,
@@ -28,24 +29,20 @@ const IconBox = styled.div`
   cursor: pointer;
 `;
 
-const GroupView = () => (
+const GroupView = ({ data }) => (
   <>
-    <Header title={"Título del Grupo"} />
-    <GroupContent />
+    <Header title={data.name} />
+    <GroupContent data={data} />
   </>
 );
 
-const GroupContent = () => {
+const GroupContent = ({ data }) => {
   const { palette } = useTheme();
 
   return (
     <>
       <Row gap={3} justify="center">
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit amet, consectetur
-          adipiscing elit
-        </Text>
+        <Text>{data.description}</Text>
       </Row>
       <Spacer y={1} />
       <Divider x={5} volume={2} />

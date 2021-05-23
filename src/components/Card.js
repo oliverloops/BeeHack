@@ -18,11 +18,11 @@ const GroupImg = styled.img`
   border-radius: 12px;
 `;
 
-const Card = ({ info }) => {
+const Card = ({ info, id }) => {
   const { palette } = useTheme();
 
   return (
-    <Link to="/group/1">
+    <Link to={`/group/${id}`}>
       <Container style={{ backgroundColor: palette.accents_2 }}>
         <CardContent info={info} />
       </Container>
