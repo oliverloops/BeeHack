@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Input, Spacer, Text, useTheme } from '@geist-ui/react';
 import styled from 'styled-components';
 //  Icon/Logo
-import Logo from '../assets/bee.png'
+import Logo from '../assets/Logo.png'
 //  Validations
 import useValidation from '../hooks/useValidation';
 import validateLogin from '../validation/validateLogin';
@@ -33,7 +33,7 @@ const LoginTitleCont = styled.div`
     align-items: center;
     justify-content: center;
     img {
-        width: 100px;
+        width: 150px;
         margin-bottom: 20px;
     }
 `;
@@ -83,7 +83,7 @@ const Login = () => {
             })
             .then(response => response.json())
             .catch(err => console.log(err));
-            history.push('/')
+            history.push('/home')
         } catch (error) {
             console.error('Hubo un error al iniciar sesión', error.message);
             getError(error.message)

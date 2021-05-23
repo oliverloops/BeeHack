@@ -13,12 +13,8 @@ const AllRoutes = () => {
         {/* Añadir mas rutas aquí */}
         <Route path="/group/:id/profiles" children={<ProfileList />} />
         <Route path="/group/:id" children={<GroupView />} />
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/home" component={Home} />
       </Switch>
     </Router>
   );

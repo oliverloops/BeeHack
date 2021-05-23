@@ -32,9 +32,9 @@ const NavBar = () => {
 
     return ( 
         <NavBarCont>
-            <Link to="/"><IoIosHome size={45} /></Link>
-            <Link to="/"><BsPeopleFill size={45} /></Link>
-            <Link to="/"><BsFillChatDotsFill size={45} /></Link>
+            <Link to="/home"><IoIosHome size={45} /></Link>
+            <Link to="/home"><BsPeopleFill size={45} /></Link>
+            <Link to="/home"><BsFillChatDotsFill size={45} /></Link>
         </NavBarCont>
      );
 }
