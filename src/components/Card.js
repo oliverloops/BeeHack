@@ -18,20 +18,19 @@ const GroupImg = styled.img`
   border-radius: 12px;
 `;
 
-const Card = () => {
+const Card = ({ info }) => {
   const { palette } = useTheme();
 
   return (
     <Link to="/group/1">
       <Container style={{ backgroundColor: palette.accents_2 }}>
-        <CardContent />
+        <CardContent info={info} />
       </Container>
     </Link>
   );
 };
 
-const CardContent = () => {
-  const { palette } = useTheme();
+const CardContent = ({ info }) => {
   return (
     <Row gap={0.8}>
       <Col span={6} style={{ padding: "12px" }}>
@@ -39,17 +38,17 @@ const CardContent = () => {
       </Col>
       <Col span={20}>
         <Row align="middle">
-          <Text p b size={19}>
-            Título
+          <Text p b size={17}>
+            {info.name}
           </Text>
-          <Spacer x={5} />
-          <Text p size={14}>
-            Label
+          <Spacer x={1} />
+          <Text p size={13}>
+            tags
           </Text>
         </Row>
         <Row style={{ marginTop: "-20px" }} align="top">
           <Col>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>{info.description}</p>
           </Col>
         </Row>
       </Col>

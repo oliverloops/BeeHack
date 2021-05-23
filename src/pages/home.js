@@ -9,23 +9,38 @@ import Card from "../components/Card";
 import Header from "../layout/Header";
 
 const Home = () => {
+  const [storedItems, setStoredItems] = React.useState([]);
+  const [filteredItems, setFilteredItems] = React.useState("");
+
+  const getField = (e) => {
+    setFilteredItems(e.target.value.toLowerCase());
+  };
+
   const getData = async () => {
-    await fetch("https://ug-groups.herokuapp.com/search-groups?tag=python")
+    await fetch(
+      "https://ug-groups.herokuapp.com/search-groups?tag=programacion"
+    )
       .catch((err) => {
         throw new Error(`Something Failed - Reason: ${err}`);
       })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setStoredItems([data.groups]));
   };
 
-  React.useState(() => {
+  const filtered = storedItems.map((elem) => {
+    return elem.filter((items) =>
+      items.name.toLowerCase().includes(filteredItems)
+    );
+  });
+
+  React.useEffect(() => {
     getData();
   }, []);
 
   return (
     <>
       <Header title={"Explora"} />
-      <SearchFilter />
+      <SearchFilter getField={getField} />
 
       <Row justify="center" style={{ padding: "12px" }}>
         <Text p b size={"1.15em"}>
@@ -36,15 +51,13 @@ const Home = () => {
       <Grid.Container gap={2} justify="center" style={{ padding: "30px" }}>
         <Row justify="center">
           <Col>
-            <Grid>
-              <Card />
-            </Grid>
-            <Grid>
-              <Card />
-            </Grid>
-            <Grid>
-              <Card />
-            </Grid>
+            {filtered.map((elem) =>
+              elem.map((item) => (
+                <Grid key={item.id}>
+                  <Card info={item} />
+                </Grid>
+              ))
+            )}
           </Col>
         </Row>
       </Grid.Container>
