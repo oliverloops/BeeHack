@@ -1,6 +1,8 @@
-🐝 UG Groups by Las Abejitas
+# 🐝 UG Groups by Las Abejitas
 
-"Conectando el talento del panal"
+## "Conectando el talento del panal"
+
+<img src="https://github.com/CristoferNava/ug-groups-api/blob/master/etc/assets/logo.png" height=200/>
 
 Logo hecho por nuestro miembro del equipo https://github.com/alfozaav
 
