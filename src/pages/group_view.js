@@ -24,6 +24,8 @@ const IconBox = styled.div`
   height: 125px;
   border-radius: 18px;
   padding: 1em 0 1em 0;
+  color: #000;
+  cursor: pointer;
 `;
 
 const GroupView = () => (
@@ -61,14 +63,16 @@ const GroupContent = () => {
             </IconBox>
           </Col>
           <Col span={12}>
-            <IconBox style={{ backgroundColor: palette.accents_2 }}>
-              <Row justify="center">
-                <BsPeopleFill size={32} />
-              </Row>
-              <Text p align="center">
-                Perfiles
-              </Text>
-            </IconBox>
+            <Link to="/">
+              <IconBox style={{ backgroundColor: palette.accents_2 }}>
+                <Row justify="center">
+                  <BsPeopleFill size={32} />
+                </Row>
+                <Text p align="center">
+                  Perfiles
+                </Text>
+              </IconBox>
+            </Link>
           </Col>
         </Row>
         <Row gap={1} style={{ marginBottom: "1.25em" }}>
